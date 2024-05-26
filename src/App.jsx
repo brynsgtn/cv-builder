@@ -1,11 +1,12 @@
 import './App.css'
-import InputFields from './components/InputFields'
+import Personal from './components/Personal'
+
 
 function App() {
 
   return (
     <>
-      <InputFields />
+      <Personal />
     </>
   )
 }
