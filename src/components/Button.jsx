@@ -3,6 +3,6 @@
 export default function Button({content, onClick}) {
     
     return (
-        <button className="text-md border border-black hover:border-slate-400 rounded-none px-5 mt-5" onClick={onClick}>{content}</button>
+        <button className="text-xs border border-black hover:border-slate-400 px-1 border-4" onClick={onClick}>{content}</button>
     )
 }
