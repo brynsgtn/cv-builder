@@ -16,10 +16,9 @@ export default function Personal() {
     const [input, setInput] = useState(false)
 
     const handleChange = (e) => {
-        const { name, value } = e.target;
         setValue((prevValue) => ({
             ...prevValue,
-            [name]: value,
+            [e.target.name]: [e.target.value],
         }));
         console.log("Typing!")
     }
