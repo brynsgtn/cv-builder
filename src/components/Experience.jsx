@@ -29,20 +29,51 @@ export default function Experience() {
         setJobs([...jobs,newJob]);
     }
 
-    const handleEditClick = () => {
+    const handleEditClick = (id) => {
         setInput(!input);
-        console.log("Button Clicked!")
     }
+
+    const handleChange = (e, jobId) => {
+        const { name, value } = e.target;
+        setJobs(prevJobs => {
+            return prevJobs.map(job => {
+                if (job.id === jobId) {
+                    return {...job, [name]: value };
+                } else {
+                    return job;
+                }
+            });
+        });
+    };
+
+    const handleDelete = (jobId) => {
+        setJobs(prevJobs => {
+            return prevJobs.filter(job => job.id!== jobId);
+        });
+    };
+    
 
     return (
         <>
 
             <div className="cursor-default select-none box-border max-w-screen-md mx-auto mt-10 text-sm">
-                <div className="mx-8 mt-2 mb-4 border-b border-solid border-black pb-5 flex flex-row justify-between">
+                <div className="mx-8 mt-2 mb-4 border-b border-solid border-black pb-5">
                     <h2 className="text-base font-semibold">WORK EXPERIENCE</h2>   
                 </div>
+
+                {(input !== false) && (
                 
-                    {jobs.map((job) => (
+                <div className="flex justify-end me-9">
+                    <Button 
+                    content="Save"
+                    onClick={handleEditClick}
+                    />
+                </div>
+                )}
+
+                
+                {jobs.length > 0? (
+                    jobs.map((job) => (
                         <Job
                             key={job.id}
                             id={job.id} 
@@ -51,10 +82,14 @@ export default function Experience() {
                             description={job.description}
                             year={job.year}
                             handleEdit={handleEditClick}
-                            // handleChange={handleChange}
+                            handleChange={handleChange}
+                            handleDelete={handleDelete}
                             input={input}
                         />
-                    ))}
+                    ))
+                ) : (
+                    <p className="my-2 pl-10 pt-2">No experience added yet...</p>
+                )}
                     <div className="my-1 pl-10 pt-2">
                         <Button 
                             content="Add"

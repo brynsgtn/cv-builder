@@ -1,58 +1,60 @@
 import Button from "./Button"
 
 
-export default function Job({id, title, company, description, year, handleEdit, handleChange, handleDelete, input}) {
+export default function Job({id, title, company, description, year, handleEdit, handleChange, handleDelete, input, e}) {
 
     const handleEditClick = () => {
         handleEdit(input);
-        console.log(id)
         
     };
+
+    const onChange = (e) => {
+        handleChange(e, id)
+    }
+
+    const handleDeleteButton = () => {
+        handleDelete(id)
+    }
+
     return (
         <>
             {input ? 
             (
             <>
-                <div className="flex justify-end me-9">
-                    <Button 
-                    content="Save"
-                    // onClick={handleEditClick}
-                    />
-                </div>
                 <div className="flex flex-col sm:flex-col md:flex-row mt-2 pt-2 justify-between px-10">
                     <div className="me-10 order-2 sm:order-2 md:order-1 w-11/12">
                         <input 
                                 type="text" 
-                                id="name" 
-                                name="name" 
+                                id="title" 
+                                name="title" 
                                 value={title} 
-                                className="block w-48 mb-3"
-                                // onChange={}
+                                className="block w-48 mb-3 font-semibold"
+                                onChange={onChange}
                         />
                         <input 
                                 type="text" 
-                                id="name" 
-                                name="name" 
+                                id="company" 
+                                name="company" 
                                 value={company} 
-                                className="block w-48 mb-3"
-                                // onChange={}
+                                className="block w-48 mb-3 italic"
+                                onChange={onChange}
                         />
                         <textarea 
-                            id="summary" 
-                            name="summary" 
-                            className="text-sm text-justify h-24 w-full select-text mb-5"
+                            id="description" 
+                            name="description" 
+                            className="text-sm text-justify h-24 w-full select-text mb-5 resize-none"
                             value={description}
-                            // onChange={}
+                            onChange={onChange}
                         />
                     </div>
                     <div className="h-full w-9/12 align-right order-1 sm:order-1 md:order-2 mb-3 md:w-2/6">
                         <input 
                                 type="text" 
-                                id="name" 
-                                name="name" 
+                                id="year" 
+                                name="year" 
                                 value={year} 
                                 className="block w-40 mb-3"
-                                // onChange={}
+                                onChange={onChange}
                         />
                     </div>
                 </div>  
@@ -69,13 +71,13 @@ export default function Job({id, title, company, description, year, handleEdit, 
                     />
                     <Button 
                     content="Delete"
-                    // onClick={handleDeleteClick}
+                    onClick={handleDeleteButton}
                     />
                 </div>
                 <div className="flex flex-col sm:flex-col md:flex-row mt-2 pt-2 justify-between px-10">
                     <div className="me-10 order-2 sm:order-2 md:order-1">
-                        <h1 className="mb-3">{title}</h1>
-                        <h1 className="mb-3">{company}</h1>
+                        <h1 className="mb-3 font-semibold">{title}</h1>
+                        <h1 className="mb-3 italic">{company}</h1>
                         <h1 className="text-justify mb-5">{description}</h1>
                     </div>
                     <div className="h-full w-9/12 align-right srder-1 sm:order-1 md:order-2 mb-3">

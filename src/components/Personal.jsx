@@ -20,12 +20,10 @@ export default function Personal() {
             ...prevValue,
             [e.target.name]: [e.target.value],
         }));
-        console.log("Typing!")
     }
 
     const handleClick = () => {
         setInput(!input);
-        console.log("Button Clicked!")
     }
     return (
         <>

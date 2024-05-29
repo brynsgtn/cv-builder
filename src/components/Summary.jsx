@@ -29,7 +29,7 @@ export default function Summary() {
                         onClick={handleClick}
                         />
                     </div>
-                    <div className="mt-5 px-10 pt-2 h-24">
+                    <div className="mt-5 px-10 pt-2 h-32">
                         <textarea 
                             id="summary" 
                             name="summary" 
