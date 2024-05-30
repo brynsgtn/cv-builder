@@ -11,10 +11,7 @@ export default function Skills() {
         setInput(!input);
     }
     const handleChange = (e) => {
-        setValue((prevValue) => ({
-            ...prevValue,
-            [e.target.name]: [e.target.value],
-        }));
+        setValue(e.target.value);
     }
 
     return (

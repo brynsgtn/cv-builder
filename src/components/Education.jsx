@@ -37,7 +37,6 @@ export default function Education() {
     const handleAdd = () => {
         const newEducation = { 
             id: education.length > 0 ? education[education.length - 1].id + 1 : 1,
-            id: 1,
             course: "[Degree] in [Field of Study]",
             school: "[University/College]",
             year: "[Start Year] - [End Year]"
