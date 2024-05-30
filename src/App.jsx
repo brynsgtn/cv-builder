@@ -1,9 +1,9 @@
-import './App.css'
 import Education from './components/Education'
 import Experience from './components/Experience'
 import Personal from './components/Personal'
 import Skills from './components/Skill'
 import Summary from './components/Summary'
+
 
 
 function App() {
@@ -17,7 +17,6 @@ function App() {
         <Education />
         <Skills />
       </div>
-
     </>
   )
 }
