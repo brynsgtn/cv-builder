@@ -1,6 +1,6 @@
 # CV Builder
 
-![CV Builder Preview](Screenshot1.png)
+![CV Builder Preview](/public/Screenshot1.png)
 
 ## Overview
 
@@ -26,8 +26,8 @@ CV Builder is deployed using Netlify for seamless deployment and hosting. You ca
 
 ## Screenshots
 
-![Screenshot 1](Screenshot1.png)
-![Screenshot 2](Screenshot2.png)
+![Screenshot 1](/public/Screenshot1.png)
+![Screenshot 2](/public/Screenshot2.png)
 
 ## Installation
 
